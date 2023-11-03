@@ -30,6 +30,22 @@ public class Main {
     assert(counts.exchange == 3);
     assert(counts.failed == 1);
     System.out.println("Done counting :)\n");
+    int[] presentCapacities2 = {120, 120, 120, 120};
+    CountsBySoH counts2 = countBatteriesByHealth(presentCapacities3);
+    assert(counts2.healthy == 4);
+    assert(counts2.exchange == 0);
+    assert(counts2.failed == 0);
+    int[] presentCapacities3 = {45, 50, 48, 50};
+    CountsBySoH counts3 = countBatteriesByHealth(presentCapacities3);
+    assert(counts3.healthy == 0);
+    assert(counts3.exchange == 0);
+    assert(counts3.failed == 4);
+   int[] presentCapacities4 = {110, 115, 75, 60,100,90};
+    CountsBySoH counts4 = countBatteriesByHealth(presentCapacities3);
+    assert(counts4.healthy == 2);
+    assert(counts4.exchange == 1);
+    assert(counts4.failed == 1);
+
   }
 
   public static void main(String[] args) {
