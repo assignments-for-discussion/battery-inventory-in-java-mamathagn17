@@ -10,7 +10,7 @@ public class Main {
   static CountsBySoH countBatteriesByHealth(int[] presentCapacities) {
     CountsBySoH counts = new CountsBySoH();
      for (int capacity : presentCapacities) {
-      double soh = (capacity * 100.0) / 120;
+      double soh = (capacity * 100.0) / 120; // Calculate SoH as a percentage
       if (soh > 80) {
         counts.healthy++;
       } else if (soh >= 62) {
@@ -24,7 +24,7 @@ public class Main {
 
   static void testBucketingByHealth() {
     System.out.println("Counting batteries by SoH...\n");
-    int[] presentCapacities = {113, 116, 80, 95, 92, 70};
+    int[] presentCapacities = {113, 116, 80, 95, 92, 70}; //various test cases
     CountsBySoH counts = countBatteriesByHealth(presentCapacities);
     assert(counts.healthy == 2);
     assert(counts.exchange == 3);
